@@ -1,3 +1,16 @@
+# IMPORTAR LIBRERÍAS DEL REPRODUCTOR DE VÍDEO
+# PREVIAMENTE HABRE INSTALADO DICHA LIBRERÍAS
+    # from omxplayer.player import OMXPlayer
+    # from pathlib import Path
+# IMPORTAR LIBRERÍAS DEL REPRODUCTOR DE VÍDEO
+# PREVIAMENTE HABRE INSTALADO PLAYSOUND
+    #from playsound import playsound
+
+#DEFINO LOS ARCHIVOS CON LOS VÍDEOS EN ESPAÑOL Y EN INGLÉS Y EL AUDIO:
+    # AUDIO_PATH_INI = Path("/home/pi/Desktop/audioini.mp3")
+    # VIDEO_PATH_ESP = Path("/home/pi/Desktop/videoEsp.mp4")
+    # VIDEO_PATH_ING = Path("/home/pi/Desktop/videoIng.mp4")
+
 def on_button_pressed_a():
     global boton, idioma
     boton = 1
@@ -32,6 +45,7 @@ def on_forever():
             # pulse botón A para rescuchar la obra en español.
             # pulse botón B para escuchar la obra en inglés
             # Wellcome to .....
+            # playsound(AUDIO_PATH_INI)
             basic.show_leds("""
                 . # . # .
                                 . . . . .
@@ -43,6 +57,7 @@ def on_forever():
                 boton = 0
                 if idioma == 1:
                     # Reproducir video obra en español
+                    # player=OMXPlayer(VIDEO_PATH_ESP)
                     basic.show_leds("""
                         . # . # .
                                                 # # # # #
@@ -53,6 +68,7 @@ def on_forever():
                     nuevoespectador = 1
                 elif idioma == 2:
                     # Reproducir video obra en inglés
+                    # player=OMXPlayer(VIDEO_PATH_ING)
                     basic.show_leds("""
                         . # . # .
                                                 . # . # .

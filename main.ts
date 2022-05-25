@@ -12,11 +12,15 @@ basic.clearScreen()
 let cuentapersonas = 0
 boton = 0
 idioma = 0
+let nuevoespectador = 1
 basic.forever(function () {
     if (pins.digitalReadPin(DigitalPin.P0) == 1) {
         basic.pause(1000)
         if (pins.digitalReadPin(DigitalPin.P0) == 1) {
-            cuentapersonas += 1
+            if (nuevoespectador == 1) {
+                cuentapersonas += 1
+                nuevoespectador = 0
+            }
             // Reproducir audio:
             // Bienvenido al teatro de
             // Alborán smart city.
@@ -46,6 +50,7 @@ basic.forever(function () {
                         # # # # #
                         . # # # .
                         `)
+                    nuevoespectador = 1
                 } else if (idioma == 2) {
                     // Reproducir audio:
                     // Bienvenido al teatro de
@@ -60,6 +65,7 @@ basic.forever(function () {
                         # . . . #
                         . . . . .
                         `)
+                    nuevoespectador = 1
                 }
             }
         } else {
